@@ -27,6 +27,17 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_picture_path',
+        'role', 
+        'address', 
+        'provinsi', 
+        'kota', 
+        'kecamatan', 
+        'kelurahan',
+        'height',
+        'weight',
+        'place_birth',
+        'date_birth'
     ];
 
     /**
