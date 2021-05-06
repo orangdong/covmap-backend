@@ -15,6 +15,9 @@ class CreateRegistrantsTable extends Migration
     {
         Schema::create('registrants', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('location_id')->constrained('locations')->onDelete('cascade');
+            $table->integer('user_id');
+            $table->unique(['location_id', 'user_id']);
             $table->timestamps();
         });
     }

@@ -22,6 +22,21 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
+
+            $table->enum('role', ['admin','user'])->nullable()->default('user');
+            $table->string('contact')->nullable();
+            $table->string('address')->nullable();
+            $table->string('provinsi')->nullable();
+            $table->string('kota')->nullable();
+            $table->string('kecamatan')->nullable();
+            $table->string('kelurahan')->nullable();
+
+            $table->integer('height')->nullable();
+            $table->integer('weight')->nullable();
+
+            $table->string('place_birth')->nullable();
+            $table->string('date_birth')->nullable();
+
             $table->timestamps();
         });
     }

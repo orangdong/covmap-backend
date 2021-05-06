@@ -15,6 +15,9 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('location_id')->constrained('locations')->onDelete('cascade');
+            $table->string('name');
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }
