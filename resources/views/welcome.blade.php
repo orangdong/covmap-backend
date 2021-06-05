@@ -7,7 +7,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css" />
       <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer ></script> 
     </head>
-    <body>
+    <body style="font-family: 'Poppins', sans-serif;">
       <section class="h-full w-full border-box  transition-all duration-500 linear" style="background-color: #000000;">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -67,7 +67,7 @@
                     <div :class="{'hidden': !open}"
                         class="bg-screen-header-4-4 bg-black fixed w-full hidden h-full top-0 left-0 z-30 bg-opacity-60"
                         @click="open = !open"> </div>
-                    <nav class="navigation-header-4-4 lg:mr-auto hidden lg:flex flex-col text-base justify-center z-50 fixed top-8 left-3 right-3 p-8 rounded-md shadow-md bg-white lg:flex-row lg:relative lg:top-0 lg:shadow-none bg-popup-header-4-4 lg:bg-transparent lg:p-0 lg:items-center items-start"
+                        <nav class="navigation-header-4-4 lg:mr-auto hidden flex-col text-base justify-center z-50 fixed top-8 left-3 right-3 p-8 rounded-md shadow-md bg-white lg:flex lg:flex-row lg:relative lg:top-0 lg:shadow-none bg-popup-header-4-4 lg:bg-transparent lg:p-0 lg:items-center items-start"
                         :class="{'flex': open, 'hidden': !open}"> <a href="#"> <img class="m-0 lg:hidden mb-3"
                                 src="{{asset('assets/img/logo.png')}}"
                                 alt="logo"> </a> 
@@ -149,10 +149,10 @@
                             style="color: #FFFFFF; line-height: 1.2;">Aplikasi terbaik untuk penanganan Covid-19 </h1>
                         <div
                             class="inline-block items-center mx-auto lg:mx-0 lg:flex justify-center lg:space-x-8 md:space-x-2  sm:space-x-3 space-x-0">
-                            <a href="{{ route('register') }}"
+                            <a  href="{{route('register')}}"
                                 class=" inline-flex font-semibold text-black  text-base py-4 px-6 rounded-xl mb-4 lg:mb-0 md:mb-0 focus:outline-none box-shadow-header-4-4"
                                 style="background-color: #FFF2DE; font-family: 'Poppins', sans-serif;">Daftar Sekarang</a> <a href="#"
-                                class="btn-outline-header-4-4 font-normal text-black  text-base py-4 px focus:outline-none bg-transparent rounded hover:border-transparent"
+                                class="btn-outline-header-4-4 font-normal text-black  text-base py-4 px-6 rounded-xl focus:outline-none bg-transparent rounded hover:border-transparent"
                                 style="font-family: 'Poppins', sans-serif;">
                                 <div class="flex items-center">  Cek Info Terkini </div>
                             </a> </div>
