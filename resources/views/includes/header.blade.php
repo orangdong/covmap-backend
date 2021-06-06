@@ -13,7 +13,7 @@
         <div :class="{'hidden': !open}"
             class="bg-screen-header-4-4 bg-black fixed w-full hidden h-full top-0 left-0 z-30 bg-opacity-60"
             @click="open = !open"> </div>
-        <nav class="navigation-header-4-4 lg:mr-auto hidden lg:flex flex-col text-base justify-center z-50 fixed top-8 left-3 right-3 p-8 rounded-md shadow-md bg-white lg:flex lg:flex-row lg:relative lg:top-0 lg:shadow-none bg-popup-header-4-4 lg:bg-transparent lg:p-0 lg:items-center items-start"
+        <nav class="navigation-header-4-4 lg:mr-auto hidden flex-col text-base justify-center z-50 fixed top-8 left-3 right-3 p-8 rounded-md shadow-md bg-white lg:flex lg:flex-row lg:relative lg:top-0 lg:shadow-none bg-popup-header-4-4 lg:bg-transparent lg:p-0 lg:items-center items-start"
             :class="{'flex': open, 'hidden': !open}"> <a href="#"> <img class="m-0 lg:hidden mb-3"
                     src="assets/logo.png"
                     alt="logo"> </a> 

@@ -152,7 +152,7 @@
                             <a  href="{{route('register')}}"
                                 class=" inline-flex font-semibold text-black  text-base py-4 px-6 rounded-xl mb-4 lg:mb-0 md:mb-0 focus:outline-none box-shadow-header-4-4"
                                 style="background-color: #FFF2DE; font-family: 'Poppins', sans-serif;">Daftar Sekarang</a> <a href="#"
-                                class="btn-outline-header-4-4 font-normal text-black  text-base py-4 px-6 rounded-xl focus:outline-none bg-transparent rounded hover:border-transparent"
+                                class="btn-outline-header-4-4 font-normal text-black  text-base py-4 px-6 rounded-xl focus:outline-none bg-transparent hover:border-transparent"
                                 style="font-family: 'Poppins', sans-serif;">
                                 <div class="flex items-center">  Cek Info Terkini </div>
                             </a> </div>
