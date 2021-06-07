@@ -6,8 +6,8 @@
     <title>@yield('title') | Dashboard CovMap</title>
 
     {{-- Favicon --}}
-    {{-- <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/img/apple-touch-icon.png')}}"> --}}
-    {{-- <link rel="shortcut icon" type="image/x-icon" href="{{asset('/assets/img/favicon.png')}}"> --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/img/logo.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/logo.png')}}">
 
     @stack('before-style')
 
