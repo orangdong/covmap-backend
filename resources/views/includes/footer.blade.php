@@ -3,8 +3,9 @@
     <div class="pb-24 mx-auto">
       <div class="grid lg:grid-cols-4 md:grid-cols-2">
         <div class="">
-          <div class="mb-5">
-            <img src="assets/logo.png" alt="logo">                                                      
+          <div class="flex flex-col mb-3" style="font-size: 22px; color: white; font-weight: 600" class="mb-5">
+            <img class="mb-2" width="80px" height="80px" src="{{asset('assets/img/logo.png')}}" alt="logo">
+            CovMap                                                      
           </div>
           <nav class="list-none list-footer-2-4 mr-5">
             <li class="mb-5">
