@@ -56,9 +56,9 @@
             <header x-data="{ open: false }">
                 <div
                     class="mx-auto flex py-12 lg:px-24 md:px-16 sm:px-8 px-8  items-center justify-between lg:justify-start">
-                    <a href="#"> <img
-                            src="{{asset('assets/img/logo.png')}}"
-                            alt="logo"> </a>
+                    <a href="#"> <img height="50px" width="50px"
+                      src="{{asset('assets/img/logo.png')}}"
+                      alt="logo"> </a>
                     <div class="flex mr-0 lg:hidden cursor-pointer"> <svg class="w-6 h-6" @click="open = !open" fill="none"
                             stroke="#E7E7E8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -68,9 +68,8 @@
                         class="bg-screen-header-4-4 bg-black fixed w-full hidden h-full top-0 left-0 z-30 bg-opacity-60"
                         @click="open = !open"> </div>
                         <nav class="navigation-header-4-4 lg:mr-auto hidden flex-col text-base justify-center z-50 fixed top-8 left-3 right-3 p-8 rounded-md shadow-md bg-white lg:flex lg:flex-row lg:relative lg:top-0 lg:shadow-none bg-popup-header-4-4 lg:bg-transparent lg:p-0 lg:items-center items-start"
-                        :class="{'flex': open, 'hidden': !open}"> <a href="#"> <img class="m-0 lg:hidden mb-3"
-                                src="{{asset('assets/img/logo.png')}}"
-                                alt="logo"> </a> 
+                        :class="{'flex': open, 'hidden': !open}"> <a href="#"> <a style="font-size: 18px;color: white; font-weight: 600; text-decoration: none; text-align: center" href="#"> <img height="50px" width="50px" class="m-0 lg:hidden mb-3"
+                          src="{{asset('assets/img/logo.png')}}" alt="logo">CovMap </a> 
                                 
                                 <!-- <a
                             class=" text-lg font-semibold leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative active"
@@ -378,8 +377,9 @@
         <div class="pb-24 mx-auto">
           <div class="grid lg:grid-cols-4 md:grid-cols-2">
             <div class="">
-              <div class="mb-5">
-                <img src="{{asset('assets/img/logo.png')}}" alt="logo">                                                      
+              <div class="flex flex-col mb-3" style="font-size: 22px; color: white; font-weight: 600" class="mb-5">
+                <img class="mb-2" width="80px" height="80px" src="{{asset('assets/img/logo.png')}}" alt="logo">
+            CovMap                                                       
               </div>
               <nav class="list-none list-footer-2-4 mr-5">
                 <li class="mb-5">
