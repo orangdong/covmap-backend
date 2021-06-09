@@ -9,7 +9,7 @@
             </a>
             
             <h2 class="font-semibold text-xl text-white leading-tight">
-                {{ __('Profile') }}
+                {{ __('Edit Profile') }}
             </h2>
         </div>
         
