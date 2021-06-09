@@ -1,10 +1,14 @@
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="title">
-        {{ __('Profile Information') }}
+        <p class="text-white">
+            {{ __('Profile Information') }}
+        </p>
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Update your account\'s profile information and email address.') }}
+        <p style="color: #999999;">
+            {{ __('Update your account\'s profile information and email address.') }}
+        </p>
     </x-slot>
 
     <x-slot name="form">
@@ -64,6 +68,66 @@
             <x-jet-label for="email" value="{{ __('Email') }}" />
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
+        </div>
+        {{-- address --}}
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="address" value="{{ __('Address') }}" />
+            <textarea class="border-gray-300 mt-1 block w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" name="address" id="address" rows="5" wire:model.defer="state.address"></textarea>
+            <x-jet-input-error for="address" class="mt-2" />
+        </div>
+        {{-- Provinsi --}}
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="provinsi" value="{{ __('Provinsi') }}" />
+            <x-jet-input id="provinsi" type="text" class="mt-1 block w-full" wire:model.defer="state.provinsi" />
+            <x-jet-input-error for="provinsi" class="mt-2" />
+        </div>
+        {{-- Kota --}}
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="kota" value="{{ __('Kota') }}" />
+            <x-jet-input id="kota" type="text" class="mt-1 block w-full" wire:model.defer="state.kota" />
+            <x-jet-input-error for="kota" class="mt-2" />
+        </div>
+        {{-- Kecamatan --}}
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="kecamatan" value="{{ __('Kecamatan') }}" />
+            <x-jet-input id="kecamatan" type="text" class="mt-1 block w-full" wire:model.defer="state.kecamatan" />
+            <x-jet-input-error for="kecamatan" class="mt-2" />
+        </div>
+        {{-- Kelurahan --}}
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="kelurahan" value="{{ __('Kelurahan') }}" />
+            <x-jet-input id="kelurahan" type="text" class="mt-1 block w-full" wire:model.defer="state.kelurahan" />
+            <x-jet-input-error for="kelurahan" class="mt-2" />
+        </div>
+        {{-- height/weight --}}
+        <div class="col-span-6 sm:col-span-4">
+            <div class="flex flex-row justify-between align-center">
+                <div class="berat">
+                    <x-jet-label for="height" value="{{ __('Height') }}" />
+                    <x-jet-input id="height" type="text" class="mt-1 block w-full" wire:model.defer="state.height" />
+                    <x-jet-input-error for="height" class="mt-2" />
+                </div>
+                <div class="tinggi">
+                    <x-jet-label for="weight" value="{{ __('Weight') }}" />
+                    <x-jet-input id="weight" type="text" class="mt-1 block w-full" wire:model.defer="state.weight" />
+                    <x-jet-input-error for="weight" class="mt-2" />
+                </div>
+            </div> 
+        </div>
+        {{-- place of birth/dateofbirth --}}
+        <div class="col-span-6 sm:col-span-4">
+            <div class="flex flex-row justify-between align-center">
+                <div class="berat">
+                    <x-jet-label for="place_birth" value="{{ __('Tempat Lahir') }}" />
+                    <x-jet-input id="place_birth" type="text" class="mt-1 block w-full" wire:model.defer="state.place_birth" />
+                    <x-jet-input-error for="place_birth" class="mt-2" />
+                </div>
+                <div class="tinggi">
+                    <x-jet-label for="date_birth" value="{{ __('Tanggal Lahir') }}" />
+                    <x-jet-input id="date_birth" type="date" class="mt-1 block w-full" wire:model.defer="state.date_birth" />
+                    <x-jet-input-error for="date_birth" class="mt-2" />
+                </div>
+            </div> 
         </div>
     </x-slot>
 

@@ -1,8 +1,18 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
-        </h2>
+        <div class="flex flex-row justify-between py-4 px-2">
+            <a href="{{route('dashboard')}}">
+                <div class="flex flex-row items-center">
+                    <img class="mr-3" height="50px" width="50px" src="{{asset('assets/img/logo.png')}}" alt="logo">
+                    <p style="font-size: 18px" class="text-white font-bold">CovMap</p>
+                </div>
+            </a>
+            
+            <h2 class="font-semibold text-xl text-white leading-tight">
+                {{ __('Profile') }}
+            </h2>
+        </div>
+        
     </x-slot>
 
     <div>
@@ -21,7 +31,7 @@
                 <x-jet-section-border />
             @endif
 
-            @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
+            {{-- @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.two-factor-authentication-form')
                 </div>
@@ -31,15 +41,15 @@
 
             <div class="mt-10 sm:mt-0">
                 @livewire('profile.logout-other-browser-sessions-form')
-            </div>
+            </div> --}}
 
-            @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
+            {{-- @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
                 <x-jet-section-border />
 
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.delete-user-form')
                 </div>
-            @endif
+            @endif --}}
         </div>
     </div>
 </x-app-layout>
