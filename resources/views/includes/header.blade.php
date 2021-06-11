@@ -22,9 +22,9 @@
                 style="color: #FFFFFF; font-family: 'Poppins', sans-serif;" href="#">Home</a>  -->
                 <a
                 class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
-                style="font-family: 'Poppins', sans-serif;" href="{{route('search')}}?service=test">Test Covid</a> <a
+                style="font-family: 'Poppins', sans-serif;" href="{{route('search')}}?service=test&sort=near">Test Covid</a> <a
                 class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
-                style="font-family: 'Poppins', sans-serif;" href="{{route('search')}}?service=vaccine">Vaksin Covid</a> <a
+                style="font-family: 'Poppins', sans-serif;" href="{{route('search')}}?service=vaccine&sort=near">Vaksin Covid</a> <a
                 class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
                 style="font-family: 'Poppins', sans-serif;" href="{{route('info')}}">Info Covid</a> <a
                 class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
