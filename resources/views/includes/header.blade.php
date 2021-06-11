@@ -20,12 +20,27 @@
                     <!-- <a
                 class=" text-lg font-semibold leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative active"
                 style="color: #FFFFFF; font-family: 'Poppins', sans-serif;" href="#">Home</a>  -->
+                @if (request()->input('service') == 'test')
+                <a
+                class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative active"
+                style="font-family: 'Poppins', sans-serif;" href="{{route('search')}}?service=test&sort=near">Test Covid</a> <a
+                class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
+                style="font-family: 'Poppins', sans-serif;" href="{{route('search')}}?service=vaccine&sort=near">Vaksin Covid</a>
+                @elseif(request()->input('service') == 'vaccine')
+                <a
+                class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
+                style="font-family: 'Poppins', sans-serif;" href="{{route('search')}}?service=test&sort=near">Test Covid</a> <a
+                class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative active"
+                style="font-family: 'Poppins', sans-serif;" href="{{route('search')}}?service=vaccine&sort=near">Vaksin Covid</a>
+                @else
                 <a
                 class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
                 style="font-family: 'Poppins', sans-serif;" href="{{route('search')}}?service=test&sort=near">Test Covid</a> <a
                 class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
-                style="font-family: 'Poppins', sans-serif;" href="{{route('search')}}?service=vaccine&sort=near">Vaksin Covid</a> <a
-                class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
+                style="font-family: 'Poppins', sans-serif;" href="{{route('search')}}?service=vaccine&sort=near">Vaksin Covid</a>
+                @endif
+                 <a
+                class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative {{ (request()->routeIs('info')) ? 'active' : '' }}"
                 style="font-family: 'Poppins', sans-serif;" href="{{route('info')}}">Info Covid</a> <a
                 class=" text-lg font-light leading-6 mx-0 lg:mx-5 my-4 lg:my-0 relative"
                 style="font-family: 'Poppins', sans-serif;" href="#">About Us</a>

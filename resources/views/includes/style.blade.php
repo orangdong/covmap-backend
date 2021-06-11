@@ -55,6 +55,11 @@
       color: #FFFFFF;
   }
 
+  .navigation-header-4-4 a.active{
+    color: #ffffff;
+    font-weight: 600
+  }
+
   .navigation-header-4-4 {
       color: #B9B9B9;
   }

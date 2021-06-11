@@ -14,9 +14,12 @@
         </div>
         
     </x-slot>
-
     <div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+            @if (!$user->kelurahan)
+            <div class="rounded p-4 mb-8 bg-red-200">Silakan isi profile sebelum memilih tempat.</div>
+            @endif
+            
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                 @livewire('profile.update-profile-information-form')
 
