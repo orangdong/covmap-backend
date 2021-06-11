@@ -17,6 +17,7 @@ class CreateLocationsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('type');
+            $table->enum('service', ['test', 'vaccine']);
             $table->string('address')->nullable();
             $table->string('provinsi')->nullable();
             $table->string('kota')->nullable();
