@@ -70,6 +70,7 @@ class DashboardController extends Controller
                 $near = Location::where([['kelurahan', $user->kelurahan], ['service_type', 'vaccine']])->with('schedule')->get();
                 $all = Location::where('service_type', 'vaccine')->with('schedule')->get();
 
+                // return $all;
                 return view('pages.search', [
                 'user' => $user,
                 'near' => $near,
