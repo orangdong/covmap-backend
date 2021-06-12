@@ -21,5 +21,6 @@ Route::get('/', function () {
 Route::prefix('dashboard')->middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('search', [DashboardController::class, 'search'])->name('search');
+    Route::get('detail/{id}', [DashboardController::class, 'details'])->name('detail');
     Route::get('info', [DashboardController::class, 'info'])->name('info');
 });

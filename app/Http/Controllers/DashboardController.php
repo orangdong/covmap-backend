@@ -19,6 +19,24 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function details($id){
+        $user = Auth::user();
+        $detail = Location::where('id', $id)->with('schedule', 'service')->first();
+
+        return view('pages.checkout', [
+            'user' => $user,
+            'detail' => $detail
+        ]);
+    }
+
+    public function checkout(){
+        $user = Auth::user();
+
+        return view('pages.checkout', [
+            'user' => $user,
+        ]);
+    }
+
     public function search(Request $request){
         $user = Auth::user();
         $service = $request->input('service');
