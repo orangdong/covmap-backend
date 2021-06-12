@@ -15,6 +15,6 @@ class Service extends Model
     ];
 
     protected $fillable = [
-        'location_id', 'name', 'description'
+        'location_id', 'name', 'description', 'price'
     ];
 }

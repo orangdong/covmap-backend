@@ -18,6 +18,7 @@ class CreateServicesTable extends Migration
             $table->foreignId('location_id')->constrained('locations')->onDelete('cascade');
             $table->string('name');
             $table->longText('description')->nullable();
+            $table->integer('price')->default(0);
             $table->timestamps();
         });
     }
