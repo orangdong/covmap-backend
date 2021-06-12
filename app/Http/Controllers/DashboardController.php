@@ -21,17 +21,51 @@ class DashboardController extends Controller
 
     public function search(Request $request){
         $user = Auth::user();
+        $service = $request->input('service');
+        $sort = $request->input('sort');
 
         if(!$user->kelurahan){
             return redirect(url('user/profile'));
         }
-        $service = $request->input('service');
-        $near = Location::where('kelurahan', $user->kelurahan)->get();
 
-        return view('pages.search', [
-            'user' => $user,
-            'near' => $near
-        ]);
+        if($service == 'test'){
+            if(!$sort || $sort == 'near'){
+                $near = Location::where(['kelurahan', $user->kelurahan], ['service', 'test'])->with('service')->get();
+                $all = Location::where('service', 'test')->with('service')->get();
+
+                return view('pages.search', [
+                    'user' => $user,
+                    'near' => $near,
+                    'all' => $all
+                ]);
+            }else{
+                $sorted = Location::where([$sort, $user->$sort], ['service', 'test'])->with('service')->get();
+
+                return view('pages.sort', [
+                    'user' => $user,
+                    'sorted' => $sorted
+                ]);
+            }
+        }else {
+            if(!$sort || $sort == 'near'){
+                $near = Location::where(['kelurahan', $user->kelurahan], ['service', 'vaccine'])->with('schedule')->get();
+                $all = Location::where('service', 'vaccine')->with('schedule')->get();
+
+                return view('pages.search', [
+                'user' => $user,
+                'near' => $near,
+                'all' => $all
+                ]);
+            } else{
+                $sorted = Location::where([$sort, $user->$sort], ['service', 'vaccine'])->with('schedule')->get();
+
+                return view('pages.sort', [
+                    'user' => $user,
+                    'sorted' => $sorted
+                ]);
+            }
+            
+        }
 
     }
 }
