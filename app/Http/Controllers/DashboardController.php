@@ -20,18 +20,43 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function details($id){
+    public function details(Request $request, $id){
         $user = Auth::user();
-        $detail = Location::where('id', $id)->with('schedule', 'service')->first();
+        $service = $request->input('service');
+        if($service == 'test'){
+            $detail = Location::where('id', $id)->with('service')->first();
+        }elseif($service == 'vaccine'){
+            $detail = Location::where('id', $id)->with('schedule')->first();
+        }else{
+            return redirect(route('dashboard'));
+        }
 
-        return view('pages.checkout', [
+        $isregis = Registrant::where([['user_id', $user->id], ['location_id', $id]])->first();
+
+        
+        if($isregis){
+            $bool = 'no';
+        } else {
+            $bool = 'yes';
+        }
+        return view('pages.detail', [
             'user' => $user,
-            'detail' => $detail
+            'detail' => $detail,
+            'location_id' => $id,
+            'possible' => $bool
         ]);
     }
 
-    public function checkout(){
+    public function checkout(Request $request){
         $user = Auth::user();
+        $location = $request->input('location');
+
+        $data = [
+            'user_id' => $user->id,
+            'location_id' => $location
+        ];
+
+        Registrant::create($data);
 
         return view('pages.checkout', [
             'user' => $user,
@@ -52,6 +77,7 @@ class DashboardController extends Controller
                 $near = Location::where([['kelurahan', $user->kelurahan], ['service_type', 'test']])->with('service')->get();
                 $all = Location::where('service_type', 'test')->with('service')->get();
 
+                // return $near;
                 return view('pages.search', [
                     'user' => $user,
                     'near' => $near,
