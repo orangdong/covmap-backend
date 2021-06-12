@@ -13,6 +13,7 @@ class DashboardController extends Controller
         $user = Auth::user();
         $history = Registrant::with('location.schedule', 'location.service')->where('user_id', $user->id)->get();
 
+        // return $history;
         return view('dashboard', [
             'user' => $user,
             'history' => $history
@@ -48,8 +49,8 @@ class DashboardController extends Controller
 
         if($service == 'test'){
             if(!$sort || $sort == 'near'){
-                $near = Location::where(['kelurahan', $user->kelurahan], ['service', 'test'])->with('service')->get();
-                $all = Location::where('service', 'test')->with('service')->get();
+                $near = Location::where([['kelurahan', $user->kelurahan], ['service_type', 'test']])->with('service')->get();
+                $all = Location::where('service_type', 'test')->with('service')->get();
 
                 return view('pages.search', [
                     'user' => $user,
@@ -57,7 +58,7 @@ class DashboardController extends Controller
                     'all' => $all
                 ]);
             }else{
-                $sorted = Location::where([$sort, $user->$sort], ['service', 'test'])->with('service')->get();
+                $sorted = Location::where([[$sort, $user->$sort], ['service_type', 'test']])->with('service')->get();
 
                 return view('pages.sort', [
                     'user' => $user,
@@ -66,8 +67,8 @@ class DashboardController extends Controller
             }
         }else {
             if(!$sort || $sort == 'near'){
-                $near = Location::where(['kelurahan', $user->kelurahan], ['service', 'vaccine'])->with('schedule')->get();
-                $all = Location::where('service', 'vaccine')->with('schedule')->get();
+                $near = Location::where([['kelurahan', $user->kelurahan], ['service_type', 'vaccine']])->with('schedule')->get();
+                $all = Location::where('service_type', 'vaccine')->with('schedule')->get();
 
                 return view('pages.search', [
                 'user' => $user,
@@ -75,7 +76,7 @@ class DashboardController extends Controller
                 'all' => $all
                 ]);
             } else{
-                $sorted = Location::where([$sort, $user->$sort], ['service', 'vaccine'])->with('schedule')->get();
+                $sorted = Location::where([[$sort, $user->$sort], ['service_type', 'vaccine']])->with('schedule')->get();
 
                 return view('pages.sort', [
                     'user' => $user,
